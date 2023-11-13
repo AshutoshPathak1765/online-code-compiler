@@ -10,7 +10,7 @@ const generateFile = async (format, code) => {
   const filename = `${jobId}.${format}`;
   const filepath = path.join(dirCodes, filename);
   await fs.writeFileSync(filepath, code);
-  return filepath;
+  return filename; //we only need the generated filename because path will be handled manually.
 };
 
 module.exports = {
